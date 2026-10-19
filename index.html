@@ -1,131 +1,128 @@
 <!--                  Jordi Mas Parramon                 -->
 <!--            https://jordimas96.github.io/            -->
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
-    <title>Mad Jumpgate - Jordi Mas Parramon</title>
+    <title>Cada vez queda menos, Cyn</title>
     <meta name="author" content="Jordi Mas Parramon">
-    <meta name="description" content="Joc de disparar fet en 2 setmanes amb Unity. 5 nivells amb armes i objectes curatius, granades, spawn d'enemics, música i efectes especials. Projecte final de DAM">
+    <meta name="description" content="Para llegar a los 30">
 
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#000000">
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <meta name="google-site-verification" content="2VXKogzGA0GsYsj4lt1_WlBORsYQrYM1QdkpzpetMQw" />
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 
 </head>
 <body>
 
     <header class="position-fixed w-100">
-        <a href="https://jordimas96.github.io/" class="boing">
-            <img class="logo" src="https://jordimas96.github.io/assets_repo/logos-jmas/red.png" alt="logo">
-        </a>
-
-        <div class="titol-header">Mad Jumpgate</div>
+        <div class="informacio-header">
+            <div class="comptador-header"></div>
+        </div>
     </header>
 
-    <section class="content">
-        <section class="text-center mt-5 mb-5">
-            <div class="titol pt-5">
-                Mad Jumpgate
+    <main class="contingut">
+
+        <section class="portada text-center">
+            <h1 class="titol pt-5">Cada vez queda menos, Cyn</h1>
+
+            <div class="comptador-principal">
+                <span class="temps-principal"></span>
             </div>
-            <img class="img-titol" src="assets/mad-jumpgate.png" alt="">
-        </section>
 
-        <h2 class="text-center mt-5 mb-3">Descripció</h2>
-        <section class="descripcio mb-5">
-            Aquest és el meu projecte final del segon curs del Cicle Superior de Desenvolupament d'Aplicacions Multiplataforma (DAM). Em va portar 2 setmanes de feina crear aquest <i>First Person Shooter</i> des de zero, utilitzant Unity. Des del moviment de la càmara i del jugador, passant per les mecàniques de cada tipus d'arma (tant l'usuari com els enemics) i punts de spawn, fins a gestionar l'inventari format per la munició i els subministraments.<br><br>
-            
-            Característiques:
-            <ul>
-                <li>5 nivells</li>
-                <li>4 tipus d'armes diferents</li>
-                <li>Diversos objectes curatius i armilles antibales</li>
-                <li>Granades</li>
-                <li>Spawn d'enemics segons la ubicació del jugador</li>
-                <li>Trampes</li>
-                <li>5 tipus d'enemics dividits en 2 categories amb diferents habilitats</li>
-                <li>Efectes especials</li>
-                <li>Marcador del dany causat</li>
-                <li>Explosions</li>
-                <li>Canvi de l'ambientació del joc al tenir poca salut</li>
-                <li>Música diferent segons el nivell i el moment del joc.</li>
-            </ul>
-        </section>
-
-        <h2 class="text-center mt-5 mb-3">Gameplay</h2>
-        <section class="gameplay">
-            <iframe src="https://www.youtube.com/embed/TwJ3bpvQ4qA" title="Mad Jumpgate gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
-            
-        </section>
-
-        <h2 class="text-center mt-5 mb-3">Jugar a Mad Jumpgate</h2>
-        <section class="botons">
-            <div class="contenidor-missatge-nomes-pc">
-                <div class="missatge" onclick="mostrarOverlay(false)">
-                    Aquest joc és<br>només per PC
-                </div>
-
-                <a class="boto boing jugar" href="./webgl/">
-                    <img class="logo" src="assets/unity.png" alt="">
-                    Jugar
-                </a>
-                <a class="boto boing itch" href="https://jmaspgames.itch.io/mad-jumpgate">
-                    <img class="logo" src="assets/itch-io.svg" alt="">
-                    Jugar a itch.io
-                </a>
-                <a class="boto boing windows" href="https://jordimas96.github.io/r/mad-jumpgate-download-windows">
-                    <img class="logo" src="assets/windows.png" alt="">
-                    Descarregar per a Windows
-                </a>
+            <div class="barra-progres mt-4" role="progressbar">
+                <div class="barra-progres-valor"></div>
             </div>
-            <a class="boto boing youtube" href="https://youtu.be/TwJ3bpvQ4qA">
-                <img class="logo" src="assets/youtube.png" alt="">
-                Gameplay a YouTube
-            </a>
-            <a class="boto boing info" href="https://jordimas96.github.io/mad-jumpgate">
-                Més informació
-            </a>
         </section>
 
-    </section>
+        <section class="alternatives text-center">
+            <p>No te sientas mal, también puedes verlo así...</p>
+
+            <div class="temps-alternatiu">
+                <span class="quantitat" id="segons"></span>
+                <span>segundos</span>
+            </div>
+
+            <p>O así:</p>
+
+            <div class="temps-alternatiu">
+                <span class="quantitat" id="minuts"></span>
+                <span>minutos</span>
+            </div>
+
+            <p>O también...</p>
+
+            <div class="temps-alternatiu">
+                <span class="quantitat" id="hores"></span>
+                <span>horas</span>
+            </div>
+
+            <p>O...</p>
+
+            <div class="temps-alternatiu">
+                <span class="quantitat" id="dies"></span>
+                <span>días</span>
+            </div>
+        </section>
+
+        <section class="respostes mb-5">
+            <h2>Mientras esperas, aprovecha para leer mis respuestas:</h2>
+
+            <div class="llista-respostes">
+                (No hay repuestas aún)
+            </div>
+        </section>
+
+        <section class="ardilla text-center mb-5">
+            <h2>Por cierto, tuve un pequeño problema con la ardilla...</h2>
+
+
+
+
+            <div class="historia-items">
+                
+                <figure>
+                    <img src="assets/ardilla/1.jpg">
+                    <figcaption>
+                        La ardilla encontró el chocolate!! 😱
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="assets/ardilla/2.jpg">
+                    <figcaption>
+                        Oh no! quiere más!!
+                    </figcaption>
+                </figure>
+
+
+                <h3 class="opacity-50">
+                    <i>
+                        Continuará...
+                    </i>
+                </h2>
+                
+            </div>
+
+
+        </section>
+
+    </main>
 
     <footer>
         <div class="firma">Jordi Mas</div>
     </footer>
 
+    <!-- Jordi Mas Parramon - https://jordimas96.github.io/ -->
 
-    <!-- Jordi Mas Parramon - xordimas@gmail.com - https://jordimas96.github.io/ -->
-
-
-    <script>
-
-        function mostrarOverlay(sn) {
-            document.querySelector(".contenidor-missatge-nomes-pc .missatge").style.display = sn ? "flex" : "none";
-        }
-
-        // Detectar mobil per pantalla tactil //
-        let esPantallaTactil = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        mostrarOverlay(esPantallaTactil);
-
-
-        // Moure titol a barra //
-        window.addEventListener('scroll', () => {
-            document.querySelector("header .titol-header").style.opacity = window.scrollY > 150 ? 1 : 0
-        });
-
-        
-        
-        
-    </script>
 </body>
 </html>
