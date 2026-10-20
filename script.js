@@ -23,8 +23,6 @@ const elementMinuts = document.querySelector('#minuts');
 const elementHores = document.querySelector('#hores');
 const elementDies = document.querySelector('#dies');
 
-const capcalera = document.querySelector('header');
-
 function formatarTemps(valor, singular, plural) {
     return `${valor} ${valor === 1 ? singular : plural}`;
 }
@@ -101,8 +99,6 @@ function actualitzarComptador() {
     const tempsTranscorregut = ara - dataInici;
 
     let progres = Math.max(0, Math.min(100, tempsTranscorregut / duradaTotal * 100));
-    console.log(progres);
-    
     if (progres > 99 && progres < 100) progres = 99;
 
     valorBarra.style.width = `${progres}%`;
@@ -116,7 +112,7 @@ function actualitzarComptador() {
 
 // Mostrar el comptador a la capçalera en fer scroll.
 function actualitzarCapcalera() {
-    capcalera.classList.toggle('mostrar-comptador', window.scrollY > 300);
+    comptadorHeader.classList.toggle('mostrar-comptador', window.scrollY > 300);
 }
 
 window.addEventListener('scroll', actualitzarCapcalera, { passive: true });
