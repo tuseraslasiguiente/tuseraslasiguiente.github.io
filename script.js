@@ -120,3 +120,8 @@ window.addEventListener('scroll', actualitzarCapcalera, { passive: true });
 actualitzarComptador();
 actualitzarCapcalera();
 setInterval(actualitzarComptador, 1000);
+
+
+
+// Afegir sticker Cyn //
+document.getElementById('sticker-cyn').src = `/assets/stickers-cyn/${Math.floor(Math.random() * 38) + 1}.png`;

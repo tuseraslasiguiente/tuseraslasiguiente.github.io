@@ -47,9 +47,19 @@ header {
     flex: 1;
 }
 
+.stickers-cyn {
+    text-align: center;
+
+    img {
+        width: 100%;
+        max-width: 55rem;
+        max-height: 20rem;
+        object-fit: contain;
+        filter: drop-shadow(0 0 8px hsl(48, 100%, 50%));
+    }
+}
+
 .portada {
-    padding-top: 2rem;
-    margin-top: calc(1.325rem + .9vw);
     margin-bottom: 5rem;
 
     h1 {
@@ -224,6 +234,14 @@ footer {
     header {
         .comptador-header {
             font-size: 1.9rem;
+        }
+    }
+    
+    .stickers-cyn {
+        padding-top: 3rem;
+
+        img {
+            max-height: 15rem;
         }
     }
 
