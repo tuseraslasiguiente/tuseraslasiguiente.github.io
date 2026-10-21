@@ -3,7 +3,7 @@
 const dataObjectiu = new Date(2028, 9, 23, 0, 0, 0);
 
 // Inici fix per calcular el progres.
-const dataInici = new Date(2026, 9, 1, 0, 0, 0);
+const dataInici = new Date(2026, 7, 1, 0, 0, 0);
 
 var dataActualProva = null;
 // Exemples de proves:
@@ -125,3 +125,57 @@ setInterval(actualitzarComptador, 1000);
 
 // Afegir sticker Cyn //
 document.getElementById('sticker-cyn').src = `/assets/stickers-cyn/${Math.floor(Math.random() * 38) + 1}.png`;
+
+
+// Ver más (sorpresa) //
+function verMas() {
+    if (document.getElementById('blue-lobster')) return;
+
+    const susto = document.createElement('div');
+    susto.id = 'blue-lobster';
+    susto.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+
+    const imagen = document.createElement('img');
+    imagen.src = '/assets/preguntes/sorpresa/blue-lobster.jpg';
+    imagen.style.cssText = `
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    `;
+
+    const audio = new Audio('/assets/preguntes/sorpresa/blue-lobster.mp3');
+    audio.volume = 1;
+
+    susto.appendChild(imagen);
+    document.body.appendChild(susto);
+
+    let eliminat = false;
+
+    function netejar() {
+        if (eliminat) return;
+        eliminat = true;
+        audio.pause();
+        audio.currentTime = 0;
+        audio.removeAttribute('src');
+        audio.load();
+        susto.remove();
+
+        // Mostrar text perdó //
+        document.getElementById("perdo-volum-baix").style.display = "block";
+    }
+
+    audio.addEventListener('ended', netejar, { once: true });
+    audio.addEventListener('error', netejar, { once: true });
+
+    audio.play().catch(netejar);
+
+    setTimeout(netejar, 4650);
+}

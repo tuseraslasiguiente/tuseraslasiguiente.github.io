@@ -196,6 +196,7 @@ header {
 
                 img {
                     border-radius: 2rem;
+                    width: 100%;
                     max-width: 20rem;
                     max-height: 20rem;
                 }
@@ -265,4 +266,18 @@ footer {
             }
         }
     }
+}
+
+
+/* Ver mas (sorpresa) */
+.boto-ver-mas {
+    background: none;
+    border: none;
+    padding: 0;
+    color: rgb(70, 206, 255);
+}
+.lletra-canco {
+    background-color: hsla(25, 75%, 78%, 0.131);
+    padding: 1rem;
+    border-radius: 2rem;
 }
