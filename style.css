@@ -162,7 +162,7 @@ header {
             background-color: hsla(25, 75%, 78%, 0.131);
             padding: 1.5rem;
             border-radius: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 5rem;
 
             .pregunta {
                 font-size: 1.7rem;
@@ -176,15 +176,29 @@ header {
                 text-align: left;
                 margin-top: 0.7rem;
 
+                .galeria {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    justify-content: center;
+                    align-items: center;
+                }
+
                 img {
                     border-radius: 2rem;
                     max-width: 20rem;
                     max-height: 20rem;
                 }
+
+                a {
+                    color: rgb(70, 206, 255);
+                }
             }
         }
     }
 }
+
+.tatxat { text-decoration: line-through; }
 
 footer {
     .firma {
