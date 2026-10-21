@@ -31,11 +31,12 @@ header {
         text-align: center;
         font-size: calc(1.325rem + .9vw);
         color: hsl(55, 100%, 50%);
-        transition: opacity 0.3s;
-        opacity: 0;
+        transition: translate 0.3s;
+        translate: 0 -200%;
+        
 
         &.mostrar-comptador {
-            opacity: 1;
+            translate: 0;
         }
     }
 }

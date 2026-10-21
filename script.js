@@ -112,7 +112,7 @@ function actualitzarComptador() {
 
 // Mostrar el comptador a la capçalera en fer scroll.
 function actualitzarCapcalera() {
-    comptadorHeader.classList.toggle('mostrar-comptador', window.scrollY > 300);
+    comptadorHeader.classList.toggle('mostrar-comptador', window.scrollY > 500);
 }
 
 window.addEventListener('scroll', actualitzarCapcalera, { passive: true });
