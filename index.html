@@ -17,6 +17,10 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -92,7 +96,11 @@
                     <div class="pregunta">
                         ¿Qué tarta te gusta? A mí me gusta muchísimo la tarta Sacher, solo.. para que lo sepas, por si acaso xD
                     </div>
-                    <div class="resposta">
+                    <div class="resposta curta">
+                        Pues el día de mi cumple pedimos un coulant que estaba buenísimo... Y en la panadería del lado de casa de mis padres tenían unas Saras que estaban buenísimas (pero cerraron 😭). En mis últimos cumples...
+                        <button onclick="clickBotoVerMas(this)" class="boto-ver-mas">Ver más ></button>
+                    </div>
+                    <div class="resposta" style="display: none;">
                         Pues el día de mi cumple pedimos un coulant que estaba buenísimo... Y en la panadería del lado de casa de mis padres tenían unas Saras que estaban buenísimas (pero cerraron 😭). En mis últimos cumples en casa de mis padres han encargado este pastel. Ah, y el de oreo es espectacular. Y el coulant de pistacho también... Mira, no soy de pasteles, pero ante estos... no me puedo resistir.
 
                         <div class="galeria mt-3">
@@ -111,7 +119,12 @@
                     <div class="pregunta">
                         ¿Eres más de dulce o de salado?
                     </div>
-                    <div class="resposta">
+                    <div class="resposta curta">
+                        Ambos (respuesta fácil xd). Me gustan las cosas dulces pero también la comida con sal. Diré salado porque hay muchos platos que hago (salados, de comida normal), y luego hay muchos pasteles, y como ya sabes, no soy de pasteles...
+                        <button onclick="clickBotoVerMas(this)" class="boto-ver-mas">Ver más ></button>
+                    </div>
+
+                    <div class="resposta" style="display: none;">
                         Ambos (respuesta fácil xd). Me gustan las cosas dulces pero también la comida con sal. Diré salado porque hay muchos platos que hago (salados, de comida normal), y luego hay muchos pasteles, y como ya sabes, no soy de pasteles. Estoy consultando las fotos de mis platos y la mayoría son salados... qué hambre me están dando, si yo lo he visto ahora tú también.
 
                         <div class="galeria mt-4 mb-5">
@@ -171,8 +184,16 @@
                     <div class="pregunta">
                         ¿Playa o montaña? Sé que te molan las dos, pero vas a tener que elegir, amigo.
                     </div>
-                    <div class="resposta">
+                    <div class="resposta curta">
+                        LAS DOS. Es más, estoy empezando un proyecto para llevar la montaña a la playa. Voy a traer un camión lleno de rocas volcánicas para echarlas al mar. Como flotan, van a tapar la playa y podremos coger la mochila y botas y subir una nueva montaña flotante...
+                        <button onclick="clickBotoVerMas(this)" class="boto-ver-mas">Ver más ></button>
+                    </div>
+                    <div class="resposta" style="display: none;">
+                        LAS DOS. Es más, estoy empezando un proyecto para llevar la montaña a la playa. Voy a traer un camión lleno de rocas volcánicas para echarlas al mar. Como flotan, van a tapar la playa y podremos coger la mochila y botas y subir una nueva montaña flotante.<br><br>
 
+                        O también podemos juntar escalar la montaña y playita, e ir a escalar a la playa. Hay una vía ferrata, sobre el mar, en Sant Feliu de Guíxols a la que quiero ir, ven conmigo antes de que la cierren!!<br><br>
+
+                        O si quieres, también puedes venirte conmigo a subir el Pedraforca con chancletas y bikini. Quién dijo que no se pueda hacer???? Utiliza tu libre albedrío!! Desafía al sistema!!
                     </div>
                 </div>
 
@@ -182,7 +203,12 @@
                     <div class="pregunta">
                         ¿Has tenido mascotas alguna vez?
                     </div>
-                    <div class="resposta">
+                    <div class="resposta curta">
+                        De pequeño, hasta los 8 o 10 años, tuve una perra llamada Espurna (Chispa en castellano, suena mucho mejor). La había atropellado un coche hacía años y estaba ciega de un ojo. Cuando mi madre se la regaló hace muchos años, él no la quería. Al final, cuando la durm...
+                        <button onclick="clickBotoVerMas(this)" class="boto-ver-mas">Ver más ></button>
+                    </div>
+
+                    <div class="resposta" style="display: none;">
                         De pequeño, hasta los 8 o 10 años, tuve una perra llamada Espurna (Chispa en castellano, suena mucho mejor). La había atropellado un coche hacía años y estaba ciega de un ojo. Cuando mi madre se la regaló hace muchos años, él no la quería. Al final, cuando la durmieron, mi abuelo nos contaba que salía del veterinario y se le caían las lágrimas...
                         
                         <div class="galeria mt-4 mb-5">
@@ -241,11 +267,14 @@
                         ¿Qué pregunta le harías a tu yo de 60 años?
                     </div>
                     <div class="resposta">
-                        Cuál es la edad de jubilación? xd<br>
-                        También le preguntaría si he conseguido vivir feliz, y sin lamentar nada. De hecho estoy pensando en una canción que habla de esto. Escúchala, está en catalán, pero seguro que la podrás entender. Iba a ponerte algunas partes de la letra pero no consigo decidir cuál poner, así que te la pongo toda (la letra):
+                        Cuál es la edad de jubilación? xd<br><br>
+                        También le preguntaría si he conseguido vivir feliz, y sin lamentar nada. De hecho estoy pensando en una canción que habla de esto. Escúchala, está en catalán, pero seguro que la podrás entender. Iba a ponerte algunas partes de la letra pero no consigo decidir cuál poner, así que te la pongo toda (la letra). Escúchala ahora, que te conozco y esta pregunta te la vas a saltar... Y siempre está bien tomarse un tiempo para
                         <br><br>
 
                         <div style="width: fit-content; max-width: 100%;" class="mx-auto lletra-canco">
+                            <div class="mb-3">
+                                <audio src="/assets/preguntes/60-anys/quan-sigui-vell.mp3" controls class="d-block m-auto"></audio>
+                            </div>
                             <span>
                                 Quan sigui vell de què em penediré? <br>
                                 No vull que sigui d’haver fallat als meus <br>
@@ -285,9 +314,6 @@
                                 que no t’emportes ni un record, però això sí: <br>
                                 la mort arriba molt més suau quan vius feliç <br>
                             </span>
-                            <div class="mt-3">
-                                <audio src="/assets/preguntes/60-anys/quan-sigui-vell.mp3" controls class="d-block m-auto"></audio>
-                            </div>
                         </div>
 
 
@@ -295,18 +321,26 @@
                 </div>
 
 
+                
+                <div class="item no-ha-escoltat-canco">
+                    <h3 class="text-center mb-0">
+                        Te he dicho que escuches la canción.<br> No me hagas venir 😡
+                    </h3>
+                </div>
 
-                <div class="item">
+                <div class="item ha-escoltat-canco" style="display: none;">
                     <div class="pregunta">
                         Del 1 al 10, ¿cuánto te gustan las sorpresas? No te hagas ilusiones, solo es una pregunta
                     </div>
                     <div class="resposta">
-                        Me gustan bastante las sorpresas, hmm si le tuviera que poner un numero del 1 al 10 quizá le pondría un 10, o bueno, quizá más bien un 9, ya que nada es perf...
+                        A mí no me la cuelas, te crees que nací ayer? Seguro que según lo que conteste, uno de estos días, cuando menos me lo espere, me vas a tirar un jumpscare o algo jajajaj pero en fin, fingiré que no lo he visto venir, vale?<br><br>
+                        Bueno, la verdad es que me gustan bastante las sorpresas, hmmm... si le tuviera que poner un numero del 1 al 10 quizá le pondría un 10, o bueno, quizá más bien un 9, ya que nada es perf...
                         <button onclick="verMas()" class="boto-ver-mas">Ver más ></button>
 
                         <h4 id="perdo-volum-baix" class="perdo-volum-baix mb-0" style="display: none;">
                             <br>
                             <br>
+                            <h1 class="text-center">NUNCA CONFÍES EN NADIE</h1>
                             Perdón, eso ha sido sucio... He puesto la canción de antes muy floja para hacerte subir el volumen JAAJJAJAJAJAJA aquí está la canción en volumen normal jeje (cuidado el volumen)
                             <div class="mt-3">
                                 <audio src="/assets/preguntes/60-anys/quan-sigui-vell-volum-normal.mp3" controls class="d-block m-auto"></audio>
@@ -322,7 +356,7 @@
                         ¿A quién llamarías primero si te pasara algo muy bueno? ¿Y algo muy malo? ¿Llamarías o mandarías un mensaje?
                     </div>
                     <div class="resposta">
-                        
+                        A ti, obvio xd si te lo cuento todo... Y algo muy malo? Pues quizá a nadie, o a ti, para desahogarme contigo jajajaj Te mandaría un mensaje de voz y cuando no te lo escucharas, me pasaría 20 minutos dándole la chapa al voz a texto del teclado del móvil para escribírtelo todo en texto. Perdón a veces soy muy pesao xD
                     </div>
                 </div>
 
@@ -333,7 +367,7 @@
                         No estoy intentando entrar en ninguna cuenta tuya sin la contraseña.
                     </div>
                     <div class="resposta">
-                        
+                        Yo tampoco estoy haciendo nada ilegal ni inmoral, ni nada prohibido por los Convenios de Ginebra. Hoy.
                     </div>
                 </div>
 
@@ -344,7 +378,8 @@
                         ¿Te unirías conmigo al pastafarismo?
                     </div>
                     <div class="resposta">
-                        
+                        ¡Ahoy, amiga! Que le den al 19 de septiembre, habría que hablar cada día así! ¡Arrr!<br>
+                        Te iba a mandar foto pero no tengo ningún colador.
                     </div>
                 </div>
 
@@ -366,7 +401,7 @@
                         ¿Crees que estaría bien darles chocolate a las ardillas?
                     </div>
                     <div class="resposta">
-                        
+                        Por recomendación de mi abogado en la causa contra el maltrato animal, no voy a responder a esa pregunta.
                     </div>
                 </div>
 

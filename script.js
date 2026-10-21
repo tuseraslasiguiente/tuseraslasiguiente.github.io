@@ -179,3 +179,31 @@ function verMas() {
 
     setTimeout(netejar, 4650);
 }
+
+
+function clickBotoVerMas(_this) {
+    $(_this).parent().hide();
+    $(_this).parent().parent().find('.resposta').last().show();
+}
+
+
+// Comprovar si s'ha reproduit la cançó //
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.querySelector('.lletra-canco audio');
+    const aviso = document.querySelector('.no-ha-escoltat-canco');
+    const pregunta = document.querySelector('.ha-escoltat-canco');
+
+    if (!audio || !aviso || !pregunta) return;
+
+    // Estat inicial
+    aviso.style.display = '';
+    pregunta.style.display = 'none';
+
+    // Quan l'àudio arriba als 30 segons
+    audio.addEventListener('timeupdate', () => {
+        if (audio.currentTime >= 30) {
+            aviso.style.display = 'none';
+            pregunta.style.display = '';
+        }
+    });
+});
