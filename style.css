@@ -175,6 +175,8 @@ header {
             border-radius: 2.5rem;
             margin-bottom: 5rem;
 
+            &.no-ha-escoltat-canco { background-color: hsla(0, 100%, 50%, 0.4); }
+
             .pregunta {
                 font-size: 1.7rem;
                 text-align: left;
@@ -200,6 +202,10 @@ header {
                     width: 100%;
                     max-width: 20rem;
                     max-height: 20rem;
+                }
+
+                .perdo-volum-baix {
+                    color: hsl(85, 80%, 70%);
                 }
             }
         }
@@ -240,7 +246,7 @@ footer {
     }
     
     .stickers-cyn {
-        padding-top: 3rem;
+        padding-top: 5.5rem;
 
         img {
             max-height: 15rem;

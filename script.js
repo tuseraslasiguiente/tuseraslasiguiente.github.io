@@ -120,12 +120,10 @@ window.addEventListener('scroll', actualitzarCapcalera, { passive: true });
 actualitzarComptador();
 actualitzarCapcalera();
 
-function sincronitzarComptador() {
+setTimeout(() => {
     actualitzarComptador();
-    setTimeout(sincronitzarComptador, 1000 - (Date.now() % 1000));
-}
-
-sincronitzarComptador();
+    setInterval(actualitzarComptador, 1000);
+}, 1000 - (Date.now() % 1000));
 
 
 
@@ -205,9 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
     aviso.style.display = '';
     pregunta.style.display = 'none';
 
-    // Quan l'àudio arriba als 30 segons
+    // Quan l'àudio arriba als 15 segons
     audio.addEventListener('timeupdate', () => {
-        if (audio.currentTime >= 30) {
+        if (audio.currentTime >= 15) {
             aviso.style.display = 'none';
             pregunta.style.display = '';
         }
