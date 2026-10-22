@@ -201,13 +201,13 @@ header {
                     max-width: 20rem;
                     max-height: 20rem;
                 }
-
-                a {
-                    color: rgb(70, 206, 255);
-                }
             }
         }
     }
+}
+
+a {
+    color: rgb(70, 206, 255);
 }
 
 .tatxat { text-decoration: line-through; }

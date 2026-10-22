@@ -119,7 +119,13 @@ window.addEventListener('scroll', actualitzarCapcalera, { passive: true });
 
 actualitzarComptador();
 actualitzarCapcalera();
-setInterval(actualitzarComptador, 1000);
+
+function sincronitzarComptador() {
+    actualitzarComptador();
+    setTimeout(sincronitzarComptador, 1000 - (Date.now() % 1000));
+}
+
+sincronitzarComptador();
 
 
 
