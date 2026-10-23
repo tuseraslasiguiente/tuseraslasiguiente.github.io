@@ -63,8 +63,7 @@ header {
 .portada {
     margin-bottom: 5rem;
 
-    h1 {
-        font-size: calc(0.7rem + 1.5vw);
+    .titol {
         margin-bottom: 1rem;
         opacity: 0.8;
     }
@@ -75,37 +74,60 @@ header {
     }
 
     .barra-progres {
+        position: relative;
         width: 100%;
         max-width: 1600px;
         height: 3rem;
         margin-inline: auto;
-        overflow: hidden;
         background-color: hsl(25, 75%, 16%);
         border-radius: 1rem;
 
+        .barra-progres-fons {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+        }
+
+        .imatge-esquirol,
+        .imatge-cyn {
+            position: absolute;
+            top: 50%;
+            object-fit: contain;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .wrapper-esquirol {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -50%);
+
+            .imatge-esquirol {
+                position: static;
+                display: block;
+                width: 6rem;
+                height: 6rem;
+                transform-origin: center;
+                animation: caminar 1.2s steps(2, end) infinite;
+            }
+        }
+
+        .imatge-cyn {
+            left: 100%;
+            width: 8rem;
+            height: 8rem;
+            transform: translate(-50%, -50%);
+        }
+
         .barra-progres-valor {
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             width: 0;
             height: 100%;
             background-color: hsl(55, 100%, 50%);
             transition: width 0.5s;
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: -50%;
-                width: 50%;
-                height: 100%;
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.4),
-                    transparent
-                );
-                animation: brillantor 2s infinite;
-            }
+            border-radius: 1rem 0 0 1rem;
         }
     }
 }
@@ -241,12 +263,12 @@ footer {
 @media (max-width: 575px) {
     header {
         .comptador-header {
-            font-size: 1.9rem;
+            font-size: 1.5rem;
         }
     }
     
     .stickers-cyn {
-        padding-top: 5.5rem;
+        padding-top: 1.2rem;
 
         img {
             max-height: 15rem;
@@ -256,6 +278,17 @@ footer {
     .portada {
         .temps-principal {
             font-size: 1.9rem;
+        }
+
+        .barra-progres {
+            .imatge-esquirol {
+                width: 3rem !important;
+                height: 3rem !important;
+            }
+            .imatge-cyn {
+                width: 5rem !important;
+                height: 5rem !important;
+            }
         }
     }
 }
@@ -287,4 +320,14 @@ footer {
     background-color: hsla(25, 75%, 78%, 0.131);
     padding: 1rem;
     border-radius: 2rem;
+}
+
+/* Animacio caminar esquirol */
+@keyframes caminar {
+    from {
+        rotate: -10deg;
+    }
+    to {
+        rotate: 10deg;
+    }
 }
