@@ -181,7 +181,7 @@ header {
             }
 
             figcaption {
-                font-size: 2rem;
+                font-size: calc(1.3rem + .6vw);
                 margin-top: 0.5rem;
             }
         }
