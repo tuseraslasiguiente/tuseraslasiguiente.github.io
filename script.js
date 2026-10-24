@@ -22,6 +22,7 @@ const elementSegons = document.querySelector('#segons');
 const elementMinuts = document.querySelector('#minuts');
 const elementHores = document.querySelector('#hores');
 const elementDies = document.querySelector('#dies');
+const elementSetmanes = document.querySelector('#setmanes');
 
 function formatarTemps(valor, singular, plural) {
     return `${valor} ${valor === 1 ? singular : plural}`;
@@ -94,6 +95,7 @@ function actualitzarComptador() {
     elementMinuts.textContent = Math.floor(tempsRestant.segonsTotals / 60).toLocaleString('es-ES');
     elementHores.textContent = Math.floor(tempsRestant.segonsTotals / 3600).toLocaleString('es-ES');
     elementDies.textContent = Math.floor(tempsRestant.segonsTotals / 86400).toLocaleString('es-ES');
+    elementSetmanes.textContent = Math.floor(tempsRestant.segonsTotals / 604800).toLocaleString('es-ES');
 
     const duradaTotal = dataObjectiu - dataInici;
     const tempsTranscorregut = ara - dataInici;
