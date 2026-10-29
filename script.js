@@ -130,7 +130,7 @@ setTimeout(() => {
 
 
 // Afegir sticker Cyn //
-document.getElementById('sticker-cyn').src = `/assets/stickers-cyn/${Math.floor(Math.random() * 38) + 1}.png`;
+document.getElementById('sticker-cyn').src = `/assets/stickers-cyn/${Math.floor(Math.random() * 41) + 1}.png`;
 
 
 // Ver más (sorpresa) //
